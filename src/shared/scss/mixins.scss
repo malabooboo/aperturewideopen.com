@@ -1,0 +1,87 @@
+@mixin mobile-large {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+@mixin slashes($opacity: .4, $fontsize: 100%) {
+  &:before {
+    content: '// ';
+    font-size: $fontsize;
+    font-family: $font-headings;
+    opacity: $opacity;
+  }
+}
+
+@mixin site-width {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+
+  @include desktop {
+    padding: 0;
+    width: 1000px;
+  }
+}
+
+@mixin vertical-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin font-antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($args...) {
+  -webkit-animation: $args;
+  animation: $args;
+}
+
+// Fade in animation for when a section comes into the viewport
+
+@mixin element-appear-resting {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@mixin element-appear-in($delay: 0s) {
+  opacity: 1;
+  transition: opacity .5s linear $delay, transform .5s ease-out $delay;
+  transform: translateY(0);
+}

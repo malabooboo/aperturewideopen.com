@@ -1,0 +1,94 @@
+@import '../shared/scss/vars';
+@import '../shared/scss/mixins';
+
+:host {
+  position: relative;
+  display: block;
+  padding: 0;
+  padding-top: $nav-height;
+  height: 300px;
+  background-color: #00318a;
+  text-align: center;
+
+  @include tablet {
+    height: 500px;
+  }
+}
+
+.bg {
+  position: relative;
+  height: 100%;
+  background: url(/assets/images/photo_about_lem.jpg) no-repeat 50% 50% / cover;
+  opacity: .3;
+}
+
+.headings {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  position: absolute;
+  padding: 0 20px;
+  width: 100%;
+  color: rgba($color-white, 1);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1;
+
+  @include tablet {
+    font-size: 40px;
+  }
+  @include desktop {
+    font-size: 60px;
+  }
+
+  small {
+    display: block;
+    padding-top: 5px;
+    color: rgba($color-white, .8);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 12px;
+
+    @include tablet {
+      font-size: 20px;
+    }
+  }
+}
+
+.see-portfolio {
+  margin-top: 20px;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid rgba($color-white, .8);
+  border-radius: 2px;
+  background-color: rgba($color-white, 0);
+  color: rgba($color-white, .8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: $font-headings;
+  cursor: pointer;
+  transition: background-color .8s, transform .8s;
+  transform: scale(1);
+
+  @include tablet {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    background-color: rgba($color-white, .2);
+    transition: background-color .3s, transform .3s;
+    transform: scale(1.1);
+  }
+}

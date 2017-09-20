@@ -1,0 +1,94 @@
+@import '../shared/scss/vars';
+@import '../shared/scss/mixins';
+
+:host {
+  position: relative;
+  display: block;
+}
+
+.site-width {
+  box-sizing: border-box;
+  margin-top: -100px;
+  padding: 20px;
+  background: $color-white;
+
+  @include clearfix;
+  @include tablet {
+    padding: 40px;
+  }
+}
+
+.intro {
+  margin-bottom: 35px;
+  color: rgba($color-black, .8);
+  font-weight: 300;
+  font-family: $font-headings;
+  line-height: 1.3;
+
+  @include slashes(.3);
+  @include tablet {
+    font-size: 26px;
+  }
+}
+
+.intro-bullets {
+  li {
+    position: relative;
+    margin-bottom: 15px;
+    margin-left: 40px;
+  }
+}
+
+.skills {
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+  background-color: rgba($color-black, .05);
+
+  @include tablet {
+    top: -30px;
+    right: -60px;
+    float: right;
+    margin: 0;
+    padding: 20px 30px;
+    width: 50%;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @keyframes skillsFadeIn { 
+    0% { opacity: 0; }
+  	100% { opacity: 1; }
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    padding: 5px 10px;
+    border-radius: 2px;
+    background-color: rgba($color-black, .1);
+    font-weight: 400;
+    font-size: 13px;
+    opacity: 0;
+    animation: skillsFadeIn .5s forwards;
+
+    @for $i from 1 through 22 {
+      &:nth-child(#{$i}) {
+      	animation-delay: $i * .1s;
+      }
+    }
+
+    &:before {
+      content: '// ';
+      font-size: 10px;
+      font-family: $font-headings;
+      opacity: .5;
+    }
+  }
+}

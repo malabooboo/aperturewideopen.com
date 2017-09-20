@@ -1,0 +1,240 @@
+<div class="videos" id="videos">
+  <div class="site-width">
+    <h2 class="top-heading">Videos</h2>
+    <p>As the Marketing Media Lead at Cityteam, I have been the key to the production of hundreds of their fundraising and documentary videos, involved
+      in all project phases including storyboarding, shooting, editing, compositing, and distribution to various media outlets.</p>
+    <div class="videos-grid grid">
+      <div class="video" (click)="openModal('modal-david')">
+        <img src="https://i1.ytimg.com/vi/2f6ciKM7GrQ/hqdefault.jpg">
+        <div class="video-info">
+          <h3>David Sundman's Story</h3>
+        </div>
+      </div>
+      <div class="video" (click)="openModal('modal-addict')">
+        <img src="https://i1.ytimg.com/vi/VIE7PtamE0I/hqdefault.jpg">
+        <div class="video-info">
+          <h3>I am an Addict</h3>
+        </div>
+      </div>
+      <div class="video" (click)="openModal('modal-generosity')">
+        <img src="https://i1.ytimg.com/vi/4ToGPSIyfOk/hqdefault.jpg">
+        <div class="video-info">
+          <h3>Generosity</h3>
+        </div>
+      </div>
+      <div class="video" (click)="openModal('modal-heritage')">
+        <img src="https://i1.ytimg.com/vi/p-FSV8t7qME/hqdefault.jpg">
+        <div class="video-info">
+          <h3>Heritage Home 2017</h3>
+        </div>
+      </div>
+      <div class="video" (click)="openModal('modal-doug')">
+        <img src="https://i1.ytimg.com/vi/mDZ6pPrTk_w/hqdefault.jpg">
+        <div class="video-info">
+          <h3>Doug Black</h3>
+          <p>Making Disciples in Innercity</p>
+        </div>
+      </div>
+      <div class="video" (click)="openModal('modal-run')">
+        <img src="https://i1.ytimg.com/vi/bBki-CINYN4/hqdefault.jpg">
+        <div class="video-info">
+          <h3>Join the Run: Run4Recovery</h3>
+        </div>
+      </div>
+      <div class="video" (click)="openModal('modal-gifts')">
+        <img src="https://i1.ytimg.com/vi/kxKHTnVehVk/hqdefault.jpg">
+        <div class="video-info">
+          <h3>Simple Gifts</h3>
+          <p>Cityteam's holiday web campaign</p>
+        </div>
+      </div>
+      <div class="video" (click)="openModal('modal-jamal')">
+        <img src="https://i1.ytimg.com/vi/N-7Vw9ijhx4/hqdefault.jpg">
+        <div class="video-info">
+          <h3>Jamal's Story</h3>
+        </div>
+      </div>
+      <div class="video" (click)="openModal('modal-shawn')">
+        <img src="https://i1.ytimg.com/vi/0IqVT6PA5zM/hqdefault.jpg">
+        <div class="video-info">
+          <h3>Cityteam Portland - Shawn's Story</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="photos" id="photos">
+  <div class="site-width">
+    <h2 class="top-heading">Photos</h2>
+    <p>I have a strong background in photography and specialize in a photo-journalistic style.</p>
+    <div class="grid">
+      <div class="grid-photo two-thirds">
+        <img src="/assets/images/photo-04-full.jpg" (click)="openModal('modal-photo-04')">
+      </div>
+      <div class="grid-photo one-third">
+        <img src="/assets/images/photo-03-full.jpg" (click)="openModal('modal-photo-03')">
+        <img src="/assets/images/photo-05-full.jpg" (click)="openModal('modal-photo-05')">
+      </div>
+      <div class="grid-photo half">
+        <img src="/assets/images/photo-06-full.jpg" (click)="openModal('modal-photo-06')">
+      </div>
+      <div class="grid-photo half">
+        <img src="/assets/images/photo-07-full.jpg" (click)="openModal('modal-photo-07')">
+      </div>
+      <div class="grid-photo width-sm">
+        <img src="/assets/images/photo-08-full.jpg" (click)="openModal('modal-photo-08')">
+        <img src="/assets/images/photo-09-full.jpg" (click)="openModal('modal-photo-09')">
+        <img src="/assets/images/photo-10-full.jpg" (click)="openModal('modal-photo-10')">
+      </div>
+      <div class="grid-photo width-lg">
+        <img src="/assets/images/photo-11-full.jpg" (click)="openModal('modal-photo-11')">
+      </div>
+      <div class="portrait-and-landscape">
+        <div class="grid-photo one-third">
+          <img src="/assets/images/photo-13-full.jpg" (click)="openModal('modal-photo-13')">
+        </div>
+        <div class="grid-photo two-thirds">
+          <img src="/assets/images/photo-12-full.jpg" (click)="openModal('modal-photo-12')">
+        </div>
+      </div>
+      <div class="grid-photo full-width">
+        <img src="/assets/images/photo-15-full.jpg" (click)="openModal('modal-photo-15')">
+        <img src="/assets/images/photo-16-full.jpg" (click)="openModal('modal-photo-16')">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Video Modals -->
+
+<modal id="modal-david" youtubeid="2f6ciKM7GrQ" modaltype="video" class="modal">
+  <div class="headings">
+    <h2>David Sundman's Story</h2>
+    <h3>Cityteam Oakland Promotional Video</h3>
+  </div>
+  <p>David Sundman is a graduate of Cityteam Oakland's Recovery Discipleship Program, and he now uses his talent in rapping to tell his story of overcoming drug addiction and alcoholism.</p>
+</modal>
+<modal id="modal-jamal" youtubeid="N-7Vw9ijhx4" modaltype="video" class="modal">
+  <div class="headings">
+    <h2>Jamal's Story</h2>
+    <h3>Men's recovery program</h3>
+  </div>
+  <p>Jamaal tells his story about how Cityteam saved his life from a life of addiction and homelessness.</p>
+</modal>
+<modal id="modal-generosity" youtubeid="4ToGPSIyfOk" modaltype="video" class="modal">
+  <div class="headings">
+    <h2>Generosity</h2>
+    <h3>Cityteam Chester Promotional Video</h3>
+  </div>
+  <p>Every year, I am assigned to create a video for Cityteam's location in Chester, PA. "Generosity" is Cityteam Chester's most recent video I produced. All interviews (except Julia Craskey) were conducted at Cityteam Chester, using black sheets and one light positioned camera front left. B-roll of lighting individual candles was shot at Cityteam Chester. The "world of candles" shoot was conducted at a local church gym, and entailed over 200 tea-light candles.</p>
+  <p>Video was shot using a Canon 5D Mark III with a Sennheisser ME66 shotgun microphone on a mic stand. Video was edited using Final Cut Pro.</p>
+</modal>
+<modal id="modal-heritage" youtubeid="p-FSV8t7qME" modaltype="video" class="modal">
+  <div class="headings">
+    <h2>Heritage Home 2017</h2>
+    <h3>Heritage Home Promotional Video</h3>
+  </div>
+  <p>Cityteam's Heritage Home is a life-changing program for homeless, pregnant women in crisis situations. The women who graduate from Heritage Home are excited for their new lives with their babies. They have gained the tools necessary to succeed, and are able to move forward with new hope and a new future. It's inspiring to see these mothers getting the help they need to overcome poverty and homelessness in order to provide a better life and future for their children.</p>
+  <p>The video also includes updates on the lives of three different graduates - Karen, Alyssa, and Christina!</p>
+</modal>
+<modal id="modal-run" youtubeid="bBki-CINYN4" modaltype="video" class="modal">
+  <div class="headings">
+    <h2>Join the Run: Run4Recovery</h2>
+  </div>
+</modal>
+<modal id="modal-addict" youtubeid="VIE7PtamE0I" modaltype="video" class="modal">
+  <div class="headings">
+    <h2>I am an Addict</h2>
+    <h3>Fundraising Video for Cityteam San Jose</h3>
+  </div>
+  <p>Initially produced for Cityteam Chester, I worked with several subjects to explore addiction in all walks of life. Each interview was conducted the subject's home, except the two men in Cityteam's Recovery Program, which were conducted at Cityteam Chester. Video was shot using a Canon 5D Mark III with a Sennheisser ME66 shotgun microphone on a boom pole.</p>
+  <p>Video was edited using Final Cut Pro. Music was provided by istockphoto.com.</p>
+</modal>
+<modal id="modal-gifts" youtubeid="kxKHTnVehVk" modaltype="video" class="modal">
+  <div class="headings">
+    <h2>Simple Gifts</h2>
+    <h3>Holiday Fundraising Video</h3>
+  </div>
+  <p>This video was produced to help Cityteam's holiday web campaign in 2010. Video was shot using a Canon 5D Mark II. Voice narration was recorded using a Sony HVR-Z1U camera and a Sennheisser ME66 shotgun microphone on a boom pole. Video was edited using Final Cut Pro. First musical piece was provided by istockphoto.com, and the second is Michael W. Smith's "Anthem For Christmas."</p>
+</modal>
+<modal id="modal-doug" youtubeid="mDZ6pPrTk_w" modaltype="video" class="modal">
+  <div class="headings">
+    <h2>Doug Black</h2>
+    <h3>Making Disciples in Innercity</h3>
+  </div>
+  <p>In April 2014, Cityteam hosted their first iDisciple Conference. This short featurette was one of five to portray "Disciple Making Movements" in five different lives. This particular video was shot in one night, following Doug Black travel to a Bible Study in Philadelphia. Video was shot using a Canon 5D Mark III with a Sennheisser ME66 shotgun microphone on-camera. Video was edited using Final Cut Pro.</p>
+</modal>
+<modal id="modal-shawn" youtubeid="0IqVT6PA5zM" modaltype="video" class="modal">
+  <div class="headings">
+    <h2>Cityteam Portland - Shawn's Story</h2>
+  </div>
+  <p>Shawn tells his story of how his past life of drug addiction almost destroyed his life and his relationship with his family, but he continues with how Cityteam Portland saved him by helping him overcome his addiction and become the man he is today.</p>
+</modal>
+
+<!-- Photo Modals -->
+<modal id="modal-photo-04" photoid="photo-04" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>Tuesday, November 20, 2012, volunteers help serve Thanksgiving meals to thousands of men, women, and children who are poor or homeless at Cityteam in San Jose, CA.</p>
+  </div>
+</modal>
+<modal id="modal-photo-03" photoid="photo-03" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>A homeless woman gets ready to sleep on a summer night in Oakland, CA on Tuesday, June 26, 2012.  Having just finished eating at a mission called Cityteam, the woman must find somewhere to sleep because Cityteam does not accept women in their overnight shelter. (06/26/12)</p>
+  </div>
+</modal>
+<modal id="modal-photo-05" photoid="photo-05" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>A volunteer at Cityteam from Kaiser Permanente gives a bag of donated food to an elderly man in Oakland, CA on Monday, November 19, 2012. During the holiday season, many people struggling in poverty have difficulties making enough income to pay bills and buy food. (11/19/12)</p>
+  </div>
+</modal>
+<modal id="modal-photo-06" photoid="photo-06" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>Scott (last name intentionally undisclosed) is a recovering drug addict going through a program at Cityteam International in Chester, PA. Scott produced a heavy amount of methamphetamine in his own home and distributed it among buyers. When he was arrested during a FBI drug bust, Scott was torn from his family. After years in prison, he went straight to Cityteam in order to get proper help to break his destructive lifestyle. His tattoos tell the story of his past, getting them in prison by melting checker pieces to use as ink. Now trying to straighten out his life, the tattoos are a sobering reminder of who he was. Hoping to one day purge his tattoos from his entire body, Scott wants to reunite with his sons and become a productive contributor to society. (04/12/11)</p>
+  </div>
+</modal>
+<modal id="modal-photo-07" photoid="photo-07" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>Alyssa Hollander, 24, holds her newborn daughter Charlie Grace Hollander. Alyssa has been a resident at Heritage Home in San Jose, CA, a recovery center for pregnant women in crisis. Before Hollander came to Heritage Home, she had been living a life of alcohol, drugs, and sex, resulting in multiple visits to rehab centers and become a mother as a teenager. It wasn’t until she became pregnant again with Charlie that she came to Heritage Home. Hollander is excelling in the recovery program and is scheduled to graduate before the end of this year, and hopes to intern at Heritage Home after graduation. (08/12/11)</p>
+  </div>
+</modal>
+<modal id="modal-photo-08" photoid="photo-08" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>Elston Perry is the CEO and Founder of PRIMEA in San Leandro, CA. Raised in Oakland, CA, Perry grew up in a broken family that lead his childhood down a path of drugs and alcohol. Despite graduating high school, Perry was homeless before he turned 20. However, when Perry hit rock bottom and found himself in an overnight shelter at Cityteam International in Oakland, he made a point to turn his life around before it was too late. Perry went on to college to get not only his Bachelor’s Degree, but also his Master’s of Divinity and Doctorate of Ministry. He was the pastor of a church in Florida for many years before moving on to a Community Organizer position at Congregations Organizing For Renewal for a few years, and then stating up PRIMEA. (07/03/12)</p>
+  </div>
+</modal>
+<modal id="modal-photo-09" photoid="photo-09" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>Floyd Bland of San Francisco, CA records the chorus to one of his songs for an upcoming hip hop album. Recruiting a number of different local vocalists and musicians, Bland hopes to create an album that reveals his soul in and compelling ways. (02/11/12)</p>
+  </div>
+</modal>
+<modal id="modal-photo-10" photoid="photo-10" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>Susan Hall of Atherton, CA stands in her personal studio at her home. What started out as a hobby over a decade ago, Hall has made a name for herself in the local area. She has been in a number of galleries around the Bay Area. (03/02/13)</p>
+  </div>
+</modal>
+<modal id="modal-photo-11" photoid="photo-11" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>At dawn in Ziway, Ethiopia on Monday, January 28, 2013, a local fisherman boards his small paddle boat onto Lake Ziway. Fishermen in the small town use their catch in order to make a living, whether it be to feed their families or to sell in the marketplace. (01/28/13)</p>
+  </div>
+</modal>
+<modal id="modal-photo-13" photoid="photo-13" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>In a remote village near Adama, Ethiopia, two children sit on the window sill of a recently erected Protestant Christian church. Ethiopia is heavily populated by both Muslims and Animists, but communities of Christians are beginning to form. (01/25/13)</p>
+  </div>
+</modal>
+<modal id="modal-photo-12" photoid="photo-12" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>On Friday, January 25, 2013, in a remote village near Adama, Ethiopia, Protestant Christians pray during a worship service. Ethiopia is heavily populated by both Muslims and Animists, but communities of Christians are beginning to form. (01/25/13)</p>
+  </div>
+</modal>
+<modal id="modal-photo-15" photoid="photo-15" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>This Kenyan was recently persecuted for leaving his Islamic faith and following Jesus. He had been beaten and disowned by his family. For his own safety, he is left unidentified. (02/02/13)</p>
+  </div>
+</modal>
+<modal id="modal-photo-16" photoid="photo-16" modaltype="photo" class="modal">
+  <div class="headings">
+    <p>In a remote village in Northern Kenya, Aila Tasse, Kenya Director for Cityteam, sits underneath the tree where some of the first Bible studies were formed in this community. Tasse travels throughout the country over three weeks each month to train disciples and bring medical aid and food to the unreached areas of Northern Kenya and Rwanda. (02/01/13)</p>
+  </div>
+</modal>

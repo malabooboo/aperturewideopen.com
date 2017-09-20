@@ -1,0 +1,124 @@
+@import '../scss/vars';
+@import '../scss/mixins';
+
+$color-modal-overlay: rgba($color-black, .8);
+$color-modal-background: #f6f6f6;
+
+// Note: Modal contents styles are in /section-portfolio/section-portfolio.component.scss
+
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-content {
+  position: fixed;
+  z-index: 40;
+  visibility: hidden;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-top: 0;
+  max-width: 375px;
+  width: 100%;
+  height: 100%;
+  background-color: $color-modal-overlay;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity .3s, visibility .1s, transform .3s;
+  transform: translateY(20px);
+
+  @include mobile-large {
+    max-width: initial;
+  }
+  @include tablet {
+    padding-top: 40px;
+  }
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s, visibility .4s, transform .3s;
+    transform: translateY(0);
+  }
+}
+
+.modal-content-inner {
+  position: relative;
+  overflow: auto;
+  box-sizing: border-box;
+  margin: 0 auto;
+  // padding: 0 10px 10px 10px;
+  width: 100%;
+  height: 100%;
+  background: $color-modal-background;
+  cursor: auto;
+
+  @include tablet {
+    // padding: 0 40px 40px 40px;
+    width: 95%;
+    height: 98%;
+  }
+}
+
+.photo-container,
+.video-container {
+  display: none;
+  box-sizing: border-box;
+  // margin-left: -20px;
+  // padding: 20px 20px 10px 20px;
+  padding: 60px 0 20px;
+  width: 100%;
+  background: rgba($color-black, .96);
+  text-align: center;
+
+  @include tablet {
+    padding: 20px 0;
+    // margin-left: -40px;
+    // padding: 40px 40px 20px 40px;
+  }
+
+  &.shown {
+    display: block;
+  }
+
+  img {
+    width: 360px;
+
+    @include tablet {
+      width: 900px;
+    }
+  }
+
+  .youtube-iframe {
+    width: 360px;
+    height: 200px;
+
+    @include tablet {
+      width: 800px;
+      height: 533px;
+    }
+  }
+}
+
+.modal-content__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+
+  @include tablet {
+    top: 20px;
+    right: 20px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+
+    fill: $color-white;
+  }
+}

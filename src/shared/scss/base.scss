@@ -1,0 +1,65 @@
+html, body, header, main, footer, div, section, h1, h2, h3, h4, h5, h6, p, ul, li, blockquote {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba($color-black, .8);
+}
+
+body {
+  // @include font-antialiased;
+  font: 300 16px / 1.6 $font-body;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  &.scroll-locked {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 10px;
+  font-weight: 100;
+  font-family: $font-headings;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+b, strong {
+  font-weight: 400;
+}
+
+.site-width {
+  @include site-width;
+}
+
+.section .section-component {
+  display: block;
+  padding: 50px 0;
+}
+
+.section h2 {
+  color: #2ab6d4;
+  font-size: 32px;
+}
+
+a {
+  color: $color-link;
+
+  &:visited {
+    color: $color-link-visited;
+  }
+
+  &:hover {
+    color: $color-link-hover;
+  }
+
+  &:active {
+    color: $color-link-active;
+  }
+}

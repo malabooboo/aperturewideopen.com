@@ -1,0 +1,179 @@
+@import '../shared/scss/vars';
+@import '../shared/scss/mixins';
+
+:host {
+  display: block;
+}
+
+.videos {
+  background: rgba($color-black, .06);
+}
+
+.videos, .photos {
+  padding: 40px 0;
+
+  @include tablet {
+    padding: 60px 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.grid,
+.portrait-and-landscape {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.video {
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0 1px 1px 0;
+  width: 100%;
+  height: 200px;
+  background: $color-black;
+  cursor: pointer;
+
+  @include mobile-large {
+    height: 260px;
+  }
+  @include tablet {
+    width: 33%;
+    height: 180px;
+  }
+  @include desktop {
+    height: 220px;
+  }
+
+  img {
+    position: absolute;
+    top: -12px;
+    width: 100%;
+    opacity: 1;
+    transition: opacity .3s ease-out, transform .3s ease-out;
+    transform: scale(1);
+  }
+
+  &:hover img {
+    opacity: .5;
+    transition: opacity .2s ease-out, transform 3s linear;
+    transform: scale(1.2);
+  }
+
+  .video-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+
+    h3 {
+      margin-bottom: 0;
+      color: $color-white;
+    }
+
+    p {
+      color: $color-white;
+    }
+  }
+
+  &:hover .video-info {
+    opacity: 1;
+    transition: opacity .5s ease-out;
+  }
+}
+
+.modal {
+  p {
+    padding: 0 20px;
+  }
+}
+
+.headings {
+  margin-bottom: 10px;
+  padding: 20px;
+  // margin-left: -40px;
+  // padding: 10px 40px 20px 40px;
+  width: 100%;
+  background: rgba($color-black, .9);
+  text-align: center;
+
+  h2, h3 {
+    margin-bottom: 0;
+    color: $color-white;
+    text-align: left;
+  }
+
+  p {
+    padding: 20px;
+    color: $color-white;
+    text-align: left;
+  }
+}
+
+// Photos
+
+.grid-photo {
+  box-sizing: border-box;
+  padding: 0 10px;
+
+  img {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: .6;
+      transition: opacity .3s;
+    }
+  }
+}
+
+@include tablet {
+  .two-thirds {
+    width: 66%;
+
+    .portrait-and-landscape & {
+      width: 67.8%;
+    }
+  }
+
+  .one-third {
+    width: 33%;
+
+    .portrait-and-landscape & {
+      width: 31.2%;
+    }
+  }
+
+  .half {
+    width: 49.5%;
+  }
+
+  .width-sm {
+    width: 24.6%;
+  }
+
+  .width-lg {
+    width: 74.4%;
+  }
+
+  .full-width {
+    width: 99%;
+  }
+}

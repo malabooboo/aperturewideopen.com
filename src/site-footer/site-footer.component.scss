@@ -1,0 +1,12 @@
+@import '../shared/scss/vars';
+
+footer {
+  padding: 20px 0 10px;
+  background-color: rgba($color-black, .9);
+
+  p {
+    color: rgba($color-white, .6);
+    font-size: 14px;
+    line-height: 1;
+  }
+}

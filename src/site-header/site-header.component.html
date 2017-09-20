@@ -1,0 +1,19 @@
+<header [ngClass]="{'nav-up': isScrollDirectionUp}">
+  <div class="site-width">
+    <div scrollTo scrollTargetSelector="#home"
+         class="logo-lockup">
+      <h1>Aperture <span>Wide Open</span></h1>
+      <h2>The Online Portfolio of Lem Malabuyo</h2>
+      <h1 class="mobile-only">AWO</h1>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav-item" [ngClass]="{'selected': currentNav == 'home'}" (click)="setCurrent('home')"><a scrollTo href="#home">Home</a></li>
+        <li class="nav-item" [ngClass]="{'selected': currentNav == 'about'}" (click)="setCurrent('about')"><a scrollTo href="#about">About</a></li>
+        <li class="nav-item" [ngClass]="{'selected': currentNav == 'videos'}" (click)="setCurrent('videos')"><a scrollTo href="#videos">Videos</a></li>
+        <li class="nav-item" [ngClass]="{'selected': currentNav == 'photos'}" (click)="setCurrent('photos')"><a scrollTo href="#photos">Photos</a></li>
+        <li class="nav-item nav-contact" [ngClass]="{'selected': currentNav == 'contact'}" (click)="setCurrent('contact')"><a scrollTo href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

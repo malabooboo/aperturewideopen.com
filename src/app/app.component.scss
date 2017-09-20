@@ -1,0 +1,19 @@
+@import '../shared/scss/vars';
+@import '../shared/scss/mixins';
+@import '../shared/scss/base';
+
+:host {
+  display: block;
+}
+
+section {
+  padding: $section-padding;
+}
+
+.top-heading {
+  margin: 0 0 25px 0;
+  color: $color-link;
+  text-transform: uppercase;
+
+  @include slashes(.3, 80%);
+}
