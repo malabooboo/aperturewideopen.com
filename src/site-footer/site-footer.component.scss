@@ -4,7 +4,12 @@ footer {
   padding: 20px 0 10px;
   background-color: rgba($color-black, .9);
 
-  p {
+  .site-width {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  p, a {
     color: rgba($color-white, .6);
     font-size: 14px;
     line-height: 1;
