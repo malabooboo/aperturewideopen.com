@@ -1,12 +1,15 @@
 import {Component, ElementRef, HostListener, Inject, OnInit} from '@angular/core';
 import {DOCUMENT} from '@angular/platform-browser';
+import {Observable} from 'rxjs/Observable';
+import {Subscription} from 'rxjs/Subscription';
 
-import {WindowRef} from '../services/window-ref.service';
+import {SectionService} from '../services/section.service';
 
 @Component({
   selector: 'site-header',
   templateUrl: './site-header.component.html',
-  styleUrls: ['./site-header.component.scss']
+  styleUrls: ['./site-header.component.scss'],
+
 })
 export class SiteHeaderComponent implements OnInit {
   /** The fixed or relative state of the nav. */
@@ -20,9 +23,11 @@ export class SiteHeaderComponent implements OnInit {
 
   currentNav: string;
 
+  sectionServiceSubscription: Subscription;
+
   constructor(
-      private windowRef: WindowRef,
-      @Inject(DOCUMENT) private document: Document) {}
+      @Inject(DOCUMENT) private document: Document,
+      private sectionService: SectionService) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -39,7 +44,13 @@ export class SiteHeaderComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.sectionServiceSubscription =
+        this.sectionService.sectionSubject.subscribe(section => {
+          this.setCurrent(section.name);
+          console.log(section.name);
+        });
+  }
 
   setCurrent(name: string) {
     this.currentNav = name;

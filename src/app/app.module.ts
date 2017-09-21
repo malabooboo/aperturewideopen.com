@@ -11,6 +11,7 @@ import {SiteHeaderComponent} from '../site-header/site-header.component';
 
 import {AppComponent} from './app.component';
 import {SectionContactComponent} from '../section-contact/section-contact.component';
+import {SectionService} from '../services/section.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import {SectionContactComponent} from '../section-contact/section-contact.compon
     SectionContactComponent
   ],
   imports: [BrowserModule, SectionPortfolioModule, ScrollToModule.forRoot()],
-  providers: [WindowRef],
+  providers: [WindowRef, SectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
