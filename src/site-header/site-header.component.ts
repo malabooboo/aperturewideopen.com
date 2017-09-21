@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, Inject, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, Inject, OnInit} from '@angular/core';
 import {DOCUMENT} from '@angular/platform-browser';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
@@ -11,7 +11,7 @@ import {SectionService} from '../services/section.service';
   styleUrls: ['./site-header.component.scss'],
 
 })
-export class SiteHeaderComponent implements OnInit {
+export class SiteHeaderComponent implements OnInit, AfterViewInit {
   /** The fixed or relative state of the nav. */
   isFixed: boolean;
 
@@ -49,6 +49,14 @@ export class SiteHeaderComponent implements OnInit {
         this.sectionService.sectionSubject.subscribe(section => {
           this.setCurrent(section.name);
         });
+  }
+
+  ngAfterViewInit() {
+    // Note: wrapped in a timeout to avoid weird
+    // "ExpressionChangedAfterItHasBeenCheckedError"
+    window.setTimeout(() => {
+      this.setCurrent('home');
+    });
   }
 
   setCurrent(name: string) {
