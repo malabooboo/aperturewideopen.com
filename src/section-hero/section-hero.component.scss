@@ -15,11 +15,24 @@
   }
 }
 
-.bg {
+.backgrounds {
   position: relative;
   height: 100%;
-  background: url(/assets/images/photo_about_lem.jpg) no-repeat 50% 50% / cover;
+}
+
+.bg1, .bg2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   opacity: .3;
+}
+
+.bg1 {
+  background: url(/assets/images/photo_about_lem.jpg) no-repeat 50% 50% / cover;
+}
+
+.bg2 {
+  background: url(/assets/images/photo_about_lem_2.jpg) no-repeat 50% 50% / cover;
 }
 
 .headings {

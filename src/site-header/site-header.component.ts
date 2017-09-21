@@ -48,7 +48,6 @@ export class SiteHeaderComponent implements OnInit {
     this.sectionServiceSubscription =
         this.sectionService.sectionSubject.subscribe(section => {
           this.setCurrent(section.name);
-          console.log(section.name);
         });
   }
 

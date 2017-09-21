@@ -1,4 +1,13 @@
-<div class="bg"></div>
+<div #bgList class="backgrounds">
+  <div *ngIf="showStep === 1"
+       [@fadeInOut]="showStep === 1"
+       class="bg1">
+  </div>
+  <div *ngIf="showStep === 2"
+       [@fadeInOut]="showStep === 2"
+       class="bg2">
+  </div>
+</div>
 <div class="headings">
   <h1>Lem Malabuyo <small>Photographer // Video Editor // Cameraman</small>
   <button class="see-portfolio" scrollTo scrollTargetSelector="#videos">See portfolio</button></h1>
