@@ -11,6 +11,6 @@ export class SectionAboutComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.yearsExperience = new Date().getFullYear() - 2006;
+    this.yearsExperience = new Date().getFullYear() - 2007;
   }
 }
