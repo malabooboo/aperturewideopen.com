@@ -78,7 +78,7 @@ h1 {
   }
 }
 
-.see-portfolio {
+.button {
   margin-top: 20px;
   padding: 5px 10px;
   outline: none;
@@ -92,7 +92,6 @@ h1 {
   font-family: $font-headings;
   cursor: pointer;
   transition: background-color .8s, transform .8s;
-  transform: scale(1);
 
   @include tablet {
     padding: 10px 20px;
@@ -102,6 +101,5 @@ h1 {
   &:hover {
     background-color: rgba($color-white, .2);
     transition: background-color .3s, transform .3s;
-    transform: scale(1.1);
   }
 }

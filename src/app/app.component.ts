@@ -19,6 +19,7 @@ const VISUAL_OFFSET = 120;
 })
 export class AppComponent implements OnInit {
   @ViewChild('aboutSection') aboutSection: ElementRef;
+  @ViewChild('reelSection') reelSection: ElementRef;
   @ViewChild('portfolioSection') portfolioSection: ElementRef;
   @ViewChild('contactSection') contactSection: ElementRef;
   isAboutInView: string;

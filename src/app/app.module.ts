@@ -7,6 +7,7 @@ import {SectionAboutComponent} from '../section-about/section-about.component';
 import {SectionContactComponent} from '../section-contact/section-contact.component';
 import {SectionHeroComponent} from '../section-hero/section-hero.component';
 import {SectionPortfolioModule} from '../section-portfolio/section-portfolio.module';
+import {SectionReelComponent} from '../section-reel/section-reel.component';
 import {SectionService} from '../services/section.service';
 import {WindowRef} from '../services/window-ref.service';
 import {SiteFooterComponent} from '../site-footer/site-footer.component';
@@ -17,7 +18,8 @@ import {AppComponent} from './app.component';
 @NgModule({
   declarations: [
     AppComponent, SectionAboutComponent, SectionHeroComponent,
-    SiteHeaderComponent, SiteFooterComponent, SectionContactComponent
+    SectionReelComponent, SiteHeaderComponent, SiteFooterComponent,
+    SectionContactComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, SectionPortfolioModule,
