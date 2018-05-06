@@ -8,8 +8,6 @@ import {Component, OnInit} from '@angular/core';
 export class SiteFooterComponent implements OnInit {
   currentYear: number;
 
-  constructor() {}
-
   ngOnInit() {
     this.currentYear = new Date().getFullYear();
   }

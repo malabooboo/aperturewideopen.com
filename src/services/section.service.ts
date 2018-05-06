@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-
+import {BehaviorSubject} from 'rxjs';
 
 /**
  * Service that opens and closes modal windows.

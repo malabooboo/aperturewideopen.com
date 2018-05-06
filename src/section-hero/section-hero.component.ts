@@ -1,6 +1,13 @@
-import {animate, Component, ElementRef, Input, AfterViewInit, QueryList, style, transition, trigger, ViewChild} from '@angular/core';
-import {Observable} from 'rxjs/Rx'
-
+import {
+  Component,
+  ElementRef,
+  Input,
+  AfterViewInit,
+  QueryList,
+  ViewChild
+} from '@angular/core';
+import {trigger, style, transition, animate} from '@angular/animations';
+import {Observable, interval} from 'rxjs';
 
 /**
  * The time in ms to show each step.
@@ -16,22 +23,18 @@ const TOTAL_STEPS = 3;
   selector: 'section-hero',
   templateUrl: './section-hero.component.html',
   styleUrls: ['./section-hero.component.scss'],
-  animations: [trigger(
-      'fadeInOut',
-      [
-        transition(
-            ':enter',
-            [
-              style({opacity: '0'}),
-              animate('1s ease-out', style({opacity: '.3'}))
-            ]),
-        transition(
-            ':leave',
-            [
-              style({opacity: '.3'}),
-              animate('1s ease-out', style({opacity: '0'}))
-            ])
-      ])],
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({opacity: '0'}),
+        animate('1s ease-out', style({opacity: '.3'}))
+      ]),
+      transition(':leave', [
+        style({opacity: '.3'}),
+        animate('1s ease-out', style({opacity: '0'}))
+      ])
+    ])
+  ]
 })
 export class SectionHeroComponent implements AfterViewInit {
   @ViewChild('bgList') bgList: ElementRef;
@@ -41,8 +44,8 @@ export class SectionHeroComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     // Cycles through the steps at a set interval
-    const interval = Observable.interval(STEP_ANIMATION_DELAY);
-    interval.subscribe(() => {
+    const stepsInterval = interval(STEP_ANIMATION_DELAY);
+    stepsInterval.subscribe(() => {
       this.showStep++;
       if (this.showStep === TOTAL_STEPS) {
         this.showStep = 1;

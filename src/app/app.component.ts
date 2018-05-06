@@ -1,6 +1,12 @@
-import {Component, ElementRef, HostListener, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {Subscription} from 'rxjs/Subscription';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
+import {Observable, Subscription} from 'rxjs';
 
 import {SectionService} from '../services/section.service';
 
@@ -14,8 +20,7 @@ const VISUAL_OFFSET = 120;
   selector: 'app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   @ViewChild('aboutSection') aboutSection: ElementRef;
@@ -44,8 +49,8 @@ export class AppComponent implements OnInit {
 
     // Section scroll positions
     const aboutSectionScrollPos = this.aboutSection.nativeElement.offsetTop;
-    const portfolioSectionScrollPos =
-        this.portfolioSection.nativeElement.offsetTop;
+    const portfolioSectionScrollPos = this.portfolioSection.nativeElement
+      .offsetTop;
     const contactSectionScrollPos = this.contactSection.nativeElement.offsetTop;
     const lastSectionHeight = this.contactSection.nativeElement.offsetHeight;
 
@@ -53,22 +58,27 @@ export class AppComponent implements OnInit {
     if (scrollPosition == 0 || scrollPosition < aboutSectionScrollPos) {
       this.sectionService.setCurrentSection('home');
     }
-    if (scrollPosition >= aboutSectionScrollPos &&
-        scrollPosition < portfolioSectionScrollPos) {
+    if (
+      scrollPosition >= aboutSectionScrollPos &&
+      scrollPosition < portfolioSectionScrollPos
+    ) {
       this.sectionService.setCurrentSection('about');
     }
-    if (scrollPosition >= portfolioSectionScrollPos &&
-        scrollPosition < contactSectionScrollPos) {
+    if (
+      scrollPosition >= portfolioSectionScrollPos &&
+      scrollPosition < contactSectionScrollPos
+    ) {
       this.sectionService.setCurrentSection('videos');
     }
-    if (scrollPosition >= contactSectionScrollPos ||
-        scrollPosition - VISUAL_OFFSET >= scrollEndPosition - lastSectionHeight) {
+    if (
+      scrollPosition >= contactSectionScrollPos ||
+      scrollPosition - VISUAL_OFFSET >= scrollEndPosition - lastSectionHeight
+    ) {
       this.sectionService.setCurrentSection('contact');
     }
   }
 
   ngOnInit() {
-    this.sectionServiceSubscription =
-        this.sectionService.sectionSubject.subscribe();
+    this.sectionServiceSubscription = this.sectionService.sectionSubject.subscribe();
   }
 }

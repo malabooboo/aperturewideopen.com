@@ -1,9 +1,15 @@
-import {Component, ElementRef, Input, OnDestroy, ViewChild, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnDestroy,
+  ViewChild,
+  OnInit
+} from '@angular/core';
+import {Subscription} from 'rxjs';
 
 import {ModalService} from '../../services/modal.service';
 import {WindowRef} from '../../services/window-ref.service';
-
 
 /**
  * The class name to add to the <body> element when a modal is open.
@@ -17,9 +23,9 @@ const SCROLL_LOCKED = 'scroll-locked';
   moduleId: module.id,
   selector: 'modal',
   templateUrl: './modal.component.ng.html',
-  styleUrls: ['./modal.component.scss'],
+  styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit, OnDestroy {
   @Input() id: string;
   @Input() youtubeid: string;
   @Input() photoid: string;
@@ -40,34 +46,41 @@ export class ModalComponent implements OnInit {
   appRef: ElementRef;
 
   constructor(
-      private windowRef: WindowRef, private modalService: ModalService,
-      public el: ElementRef) {}
+    private windowRef: WindowRef,
+    private modalService: ModalService,
+    public el: ElementRef
+  ) {}
 
   ngOnInit() {
-    this.modalSubscription =
-        this.modalService.modalSubject.subscribe((modalInfo) => {
-          if (modalInfo['command'] == 'open' &&
-              modalInfo['id'] == this.el.nativeElement.id) {
-            this.isOpen = true;
-            if (this.modaltype == 'video') {
-              this.youtubeIframe.nativeElement.src = this.getYoutubeUrl();
-            } else if (this.modaltype == 'photo') {
-              this.imgEl.nativeElement.src = this.getImgUrl();
-            }
-            this.lockScroll();
-          } else {
-            this.isOpen = false;
-            if (this.modaltype == 'video') {
-              this.youtubeIframe.nativeElement.src = '';
-            } else if (this.modaltype == 'photo') {
-              this.imgEl.nativeElement.src = '';
-            }
+    this.modalSubscription = this.modalService.modalSubject.subscribe(
+      modalInfo => {
+        if (
+          modalInfo['command'] === 'open' &&
+          modalInfo['id'] === this.el.nativeElement.id
+        ) {
+          this.isOpen = true;
+          if (this.modaltype === 'video') {
+            this.youtubeIframe.nativeElement.src = this.getYoutubeUrl();
+          } else if (this.modaltype === 'photo') {
+            this.imgEl.nativeElement.src = this.getImgUrl();
           }
-        });
+          this.lockScroll();
+        } else {
+          this.isOpen = false;
+          if (this.modaltype === 'video') {
+            this.youtubeIframe.nativeElement.src = '';
+          } else if (this.modaltype === 'photo') {
+            this.imgEl.nativeElement.src = '';
+          }
+        }
+      }
+    );
   }
 
   private getYoutubeUrl(): string {
-    return `https://www.youtube.com/embed/${this.youtubeid}?ecver=1&enablejsapi=1`;
+    return `https://www.youtube.com/embed/${
+      this.youtubeid
+    }?ecver=1&enablejsapi=1`;
   }
 
   private getImgUrl(): string {

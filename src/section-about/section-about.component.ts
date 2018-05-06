@@ -8,8 +8,6 @@ import {Component, OnInit} from '@angular/core';
 export class SectionAboutComponent implements OnInit {
   yearsExperience: number;
 
-  constructor() {}
-
   ngOnInit() {
     this.yearsExperience = new Date().getFullYear() - 2007;
   }

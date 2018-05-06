@@ -1,5 +1,5 @@
-import {animate, Component, ElementRef, OnInit, style, transition, trigger} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import {Component, ElementRef, OnInit, OnDestroy} from '@angular/core';
+import {Subscription} from 'rxjs';
 
 import {ModalService} from '../services/modal.service';
 
@@ -7,9 +7,9 @@ import {ModalService} from '../services/modal.service';
   selector: 'section-portfolio',
   templateUrl: './section-portfolio.component.ng.html',
   styleUrls: ['./section-portfolio.component.scss'],
-  providers: [ModalService],
+  providers: [ModalService]
 })
-export class SectionPortfolioComponent implements OnInit {
+export class SectionPortfolioComponent implements OnInit, OnDestroy {
   /**
    * Subscription to the modal service.
    */
