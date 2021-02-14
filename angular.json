@@ -18,6 +18,8 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
+              "src/resume",
+              "src/robots.txt",
               "src/favicon.ico"
             ],
             "styles": [
